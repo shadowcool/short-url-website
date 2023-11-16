@@ -1,8 +1,13 @@
 import { QuickDB } from 'quick.db';
 import validator from 'validator';
 import { devMode } from '@/deploy.json' assert { type: 'json' };
+import path from 'path';
 
-const db = new QuickDB();
+const dbPath = path.resolve(process.cwd(), 'json.sqlite');
+
+const db = new QuickDB({
+    filePath: dbPath,
+});
 
 export default async function handler(req, res) {
 
