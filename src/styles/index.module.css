@@ -1,0 +1,29 @@
+.navbarBrand {
+    margin-left: 10%;
+}
+
+.navbarNav {
+    margin-right: 10%;
+}
+
+.navItem {
+    margin-left: 5%;
+}
+
+.themeNavItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Btn {
+    border: none;
+}
+
+.newUrlDiv {
+    margin-top: 2rem;
+}
+
+.oldUrlDiv {
+    margin-top: 3rem;
+}

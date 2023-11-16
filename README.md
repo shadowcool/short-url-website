@@ -1,2 +1,3 @@
-# short-url-website
-Creates Custom Tiny URL's with a dashboard and custom configuration
+# Short URL Website
+
+This is a website that shorterns your big URL's and provides a Short URL for ABSOLULETLY Free.
