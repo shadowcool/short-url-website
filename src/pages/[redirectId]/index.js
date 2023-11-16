@@ -17,7 +17,7 @@ export default function Redirect() {
 
     useEffect(() => {
         // Sending Request for Redirect URL
-        const url = `http://localhost:3000/api/redirect?redirectId=${redirectId}`;
+        const url = `https://short-url-website.vercel.app/api/redirect?redirectId=${redirectId}`;
 
         fetch(url, {
             method: "GET"

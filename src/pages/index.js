@@ -17,7 +17,7 @@ export default function Home() {
       alert('Please fill all fields!');
     }
 
-    const url = `http://localhost:3000/api/redirect`;
+    const url = `https://short-url-website.vercel.app/api/redirect`;
 
     // Fetching the API
 
@@ -68,7 +68,7 @@ export default function Home() {
           <label htmlFor="new-url-input" className="form-label">New URL:</label>
 
           <div className="input-group w-50 mx-auto">
-            <span className="input-group-text">https://short-url.vercel.app/</span>
+            <span className="input-group-text">https://short-url-website.vercel.app/</span>
             <input type="text" className="form-control" id="new-url-input" />
           </div>
 

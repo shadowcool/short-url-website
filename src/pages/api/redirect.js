@@ -61,7 +61,7 @@ export default async function handler(req, res) {
         // Returning Error if Redirect URL Already There
 
         if(redirect) {
-            return res.status(409).json({ error_message: "Redirect URL Already There", code: 409, redirectInfo: { redirectId, redirectUrl: `http://localhost:3000/${redirectId}` } });
+            return res.status(409).json({ error_message: "Redirect URL Already There", code: 409, redirectInfo: { redirectId, redirectUrl: `https://short-url-website.vercel.app/${redirectId}` } });
         }
 
         // Setting Redirect URL in Database
