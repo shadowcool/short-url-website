@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { devMode } from '@/deploy.json' assert { type: 'json' };
 
 export default function Redirect() {
 
@@ -16,8 +17,11 @@ export default function Redirect() {
     }, [])
 
     useEffect(() => {
+        // Setting Base URL
+        let baseUrl = devMode ? "http://localhost:3000" : "https://short-url-website.vercel.app";
+
         // Sending Request for Redirect URL
-        const url = `https://short-url-website.vercel.app/api/redirect?redirectId=${redirectId}`;
+        const url = `${baseUrl}/api/redirect?redirectId=${redirectId}`;
 
         fetch(url, {
             method: "GET"

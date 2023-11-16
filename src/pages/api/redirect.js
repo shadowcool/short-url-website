@@ -1,5 +1,6 @@
 import { QuickDB } from 'quick.db';
 import validator from 'validator';
+import { devMode } from '@/deploy.json' assert { type: 'json' };
 
 const db = new QuickDB();
 
@@ -60,8 +61,10 @@ export default async function handler(req, res) {
 
         // Returning Error if Redirect URL Already There
 
+        const baseUrl = devMode ? "http://localhost:3000" : "https://short-url-website.vercel.app";
+
         if(redirect) {
-            return res.status(409).json({ error_message: "Redirect URL Already There", code: 409, redirectInfo: { redirectId, redirectUrl: `https://short-url-website.vercel.app/${redirectId}` } });
+            return res.status(409).json({ error_message: "Redirect URL Already There", code: 409, redirectInfo: { redirectId, redirectUrl: `${baseUrl}/${redirectId}` } });
         }
 
         // Setting Redirect URL in Database

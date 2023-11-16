@@ -1,8 +1,14 @@
 import Head from "next/head";
 import styles from '../styles/index.module.css';
 import Navbar from "@/components/Navbar";
+import { devMode } from '@/deploy.json' assert { type: 'json' };
+import { useEffect } from "react";
 
 export default function Home() {
+
+  // Setting Base URL based on Dev Mode
+
+  let baseUrle = devMode ? "http://localhost:3000/" : "https://short-url-website.vercel.app/";
 
   // Setting the New URL Function
 
@@ -17,8 +23,8 @@ export default function Home() {
       alert('Please fill all fields!');
     }
 
-    const url = `https://short-url-website.vercel.app/api/redirect`;
-
+    const url = `${baseUrle}api/redirect`
+    
     // Fetching the API
 
     fetch(url, {
@@ -68,7 +74,7 @@ export default function Home() {
           <label htmlFor="new-url-input" className="form-label">New URL:</label>
 
           <div className="input-group w-50 mx-auto">
-            <span className="input-group-text">https://short-url-website.vercel.app/</span>
+            <span className="input-group-text">{baseUrle}</span>
             <input type="text" className="form-control" id="new-url-input" />
           </div>
 
